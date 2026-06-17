@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,57 +26,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const PromedioPage()),
-        );
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF023052),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.fact_check,
-              size: 100,
-              color: Color(0xFFFFCC00),
-            ),
-            SizedBox(height: 20),
-            Text(
-              "Bienvenido a Academic Check",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class PromedioPage extends StatefulWidget {
   const PromedioPage({super.key});
 
@@ -84,8 +34,10 @@ class PromedioPage extends StatefulWidget {
 }
 
 class _PromedioPageState extends State<PromedioPage> {
+  // Estado para colapsar/expandir pesos
   bool _pesosExpandidos = false;
 
+  // --- CONTROLADORES DE NOTAS ---
   final _u1Es = TextEditingController();
   final _u1Ep = TextEditingController();
   final _u2Es = TextEditingController();
@@ -94,6 +46,7 @@ class _PromedioPageState extends State<PromedioPage> {
   final _u3Ep = TextEditingController();
   final _ecg = TextEditingController();
 
+  // --- CONTROLADORES DE PESOS ---
   final _wU1Es = TextEditingController(text: "5");
   final _wU1Ep = TextEditingController(text: "15");
   final _wU2Es = TextEditingController(text: "5");
@@ -167,6 +120,7 @@ class _PromedioPageState extends State<PromedioPage> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            // --- SECCIÓN DE PESOS COLAPSABLE ---
             Card(
               elevation: 0,
               color: Colors.white.withOpacity(0.8),
@@ -206,6 +160,7 @@ class _PromedioPageState extends State<PromedioPage> {
             
             const SizedBox(height: 10),
 
+            // --- SECCIÓN DE NOTAS ---
             _buildUnidadCard("UNIDAD 1", _u1Es, "Nota ES", _u1Ep, "Nota EP"),
             _buildUnidadCard("UNIDAD 2", _u2Es, "Nota ES", _u2Ep, "Nota EP"),
             _buildUnidadCard("UNIDAD 3", _u3Es, "Nota ES", _u3Ep, "Nota EP"),
@@ -219,7 +174,7 @@ class _PromedioPageState extends State<PromedioPage> {
                   decoration: const InputDecoration(
                     labelText: "Nota ECG (Competencia Genérica)",
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.fact_check, color: Color(0xFFFFCC00)),
+                    prefixIcon: Icon(Icons.star, color: Color(0xFFFFCC00)),
                   ),
                 ),
               ),
@@ -259,7 +214,7 @@ class _PromedioPageState extends State<PromedioPage> {
                 decoration: BoxDecoration(
                   color: const Color(0xFFFFCC00),
                   borderRadius: BorderRadius.circular(15),
-                  boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 5)],
+                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
                 ),
                 child: Column(
                   children: [
