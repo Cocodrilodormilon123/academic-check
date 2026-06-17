@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Academic Check</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #222B45;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: #000000;
+            border: 2px solid #FFAA00;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .icon-container {
+            width: 90px;
+            height: 90px;
+            background-color: #FFAA00;
+            border-radius: 22px;
+            margin: 0 auto 25px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(255, 170, 0, 0.3);
+        }
+
+        .icon-container svg {
+            width: 50px;
+            height: 50px;
+            fill: #000000;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #FFFFFF;
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-0: 0;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFAA00;
+            color: #000000;
+            text-decoration: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 170, 0, 0.4);
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 170, 0, 0.5);
+            background-color: #ffbb33;
+        }
+
+        .btn-download:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-download svg {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            fill: #000000;
+        }
+
+        .instructions {
+            margin-top: 35px;
+            text-align: left;
+            background-color: #222B45;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #FFAA00;
+        }
+
+        .instructions h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #FFAA00;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .instructions li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #FFFFFF;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="icon-container">
+            <!-- SVG de Android / App -->
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M16.607 20.443a.747.747 0 0 1-.745-.745v-4.102a.747.747 0 1 1 1.49 0v4.102a.747.747 0 0 1-.745.745zm-9.214 0a.747.747 0 0 1-.745-.745v-4.102a.747.747 0 1 1 1.49 0v4.102a.747.747 0 0 1-.745.745zM4.302 8.922a.747.747 0 0 1 .745-.745h13.906a.747.747 0 0 1 .745.745v5.526a.747.747 0 0 1-.745.745H5.047a.747.747 0 0 1-.745-.745V8.922zm2.08 1.956a.637.637 0 1 0 0 1.274.637.637 0 0 0 0-1.274zm11.236 0a.637.637 0 1 0 0 1.274.637.637 0 0 0 0-1.274zm-2.043-4.572a.557.557 0 0 1 .773-.146.559.559 0 0 1 .146.774l-1.042 1.63a.58.58 0 0 1-.059.073A15.352 15.352 0 0 0 12 8.167c-1.314 0-2.57.17-3.754.47l-.058-.073-1.042-1.63a.558.558 0 0 1 .146-.774.557.557 0 0 1 .773.146l.97 1.517A7.382 7.382 0 0 1 12 7.42c1.037 0 2.022.213 2.918.599l.97-1.517z" />
+            </svg>
+        </div>
+
+        <h1>Academic Check</h1>
+        <p class="subtitle">Descarga la última versión oficial de la aplicación móvil de forma directa y segura.</p>
+
+        <a href="https://github.com/Cocodrilodormilon123/academic-check/releases/latest/download/app-release.apk"
+            class="btn-download" download>
+            <!-- SVG de Descarga -->
+            <svg viewBox="0 0 24 24">
+                <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
+            </svg>
+            Descargar APK
+        </a>
+
+        <div class="instructions">
+            <h3>Pasos para la instalación</h3>
+            <ol>
+                <li>Presiona el botón de arriba para iniciar la descarga.</li>
+                <li>Si tu navegador lo solicita, otorga permisos para descargar de fuentes externas.</li>
+                <li>Una vez completada, abre el archivo <code>app-release.apk</code> e instala.</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Academic Check • Todos los derechos reservados
+        </div>
+    </div>
+
+</body>
+
+</html>
